@@ -72,7 +72,7 @@ public class HaddGoodsServlet extends HttpServlet {
                 com.jspsmart.upload.File smartFile=(com.jspsmart.upload.File) fileEnum.nextElement();  
                 if(!smartFile.isMissing()){  
                     String fileName=smartFile.getFileName();  
-                    response.setContentType("text/html;charset=UTF-8");//���������������,ҳ����ҲҪΪgbk  
+                    response.setContentType("text/html;charset=gbk");//���������������,ҳ����ҲҪΪgbk  
                     smartFile.saveAs(fullPath+"//"+fileName, com.jspsmart.upload.File.SAVEAS_PHYSICAL); 
                     gurl+=fileName;
                 }  
@@ -86,7 +86,7 @@ public class HaddGoodsServlet extends HttpServlet {
         DBUtil util = new DBUtil();
 		Connection conn = util.openConnection();
 		try {
-				String sql = "insert into goods(gname,gurl,gprice,gcount,gtext,gtype) values('"+name+"','"+gurl+"',"+price+","+count+",+"+text+",'1')";
+				String sql = "insert into goods(gname,gurl,gprice,gcount,gtext,gtype) values('"+name+"','"+gurl+"',"+price+","+count+",'"+text+"','1')";
 				Statement stmt = conn.createStatement();
 				stmt.executeUpdate(sql);
 
