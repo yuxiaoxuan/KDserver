@@ -43,6 +43,7 @@ public class HaddGoodsServlet extends HttpServlet {
 		// TODO Auto-generated method stub
 		
 		String gurl="http://192.168.0.102:8080/ShopServer/goods/";
+//		String gurl="http://localhost:8080/ShopServer/goods/";
 		String loadpath=this.getServletConfig().getServletContext().getRealPath("/");
 		String fullPath=loadpath+path;  
         File fullDir=new File(fullPath);  

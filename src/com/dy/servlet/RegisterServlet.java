@@ -20,7 +20,6 @@ import com.dy.util.DBUtil;
  */
 public class RegisterServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
     /**
      * @see HttpServlet#HttpServlet()
      */
@@ -47,7 +46,8 @@ public class RegisterServlet extends HttpServlet {
 		String phone = request.getParameter("phone");
 		String address = request.getParameter("address");
 		String sql2 = "select count(*) from users where username='"+userName+"'";
-		String sql = "insert into users(username,password,phone,address) values('"+userName+"','"+password+"','"+phone+"','"+address+"')";
+	String sql = "insert into users(username,password,phone,address) values('"+userName+"','"+password+"','"+phone+"','"+address+"')";
+
 		DBUtil util = new DBUtil();
 		Connection conn = util.openConnection();
 		PrintWriter out = response.getWriter();
